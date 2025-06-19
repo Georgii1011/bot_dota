@@ -340,3 +340,90 @@ aliases = {
     "вк": "wraith king",
     "зевс": "zeus"
     }
+
+def get_hero_complexities() -> dict[int, int]:
+    return {
+        1: 3,    # Anti-Mage
+        2: 2,    # Axe
+        3: 3,    # Bane
+        4: 2,    # Bloodseeker
+        5: 2,    # Crystal Maiden
+        6: 3,    # Drow Ranger
+        7: 1,    # Earthshaker
+        8: 2,    # Juggernaut
+        9: 2,    # Mirana
+        10: 3,   # Morphling
+        11: 2,   # Shadow Fiend
+        12: 3,   # Phantom Lancer
+        13: 3,   # Puck
+        14: 3,   # Pudge
+        15: 1,   # Razor
+        16: 3,   # Sand King
+        17: 3,   # Storm Spirit
+        18: 2,   # Sven
+        19: 1,   # Tiny
+        20: 3,   # Vengeful Spirit
+        21: 2,   # Windranger
+        22: 2,   # Zeus
+        23: 1,   # Kunkka
+        25: 1,   # Lina
+        26: 2,   # Lion
+        27: 2,   # Shadow Shaman
+        28: 1,   # Slardar
+        29: 3,   # Tidehunter
+        30: 3,   # Witch Doctor
+        31: 2,   # Lich
+        32: 3,   # Riki
+        33: 1,   # Enigma
+        34: 2,   # Tinker
+        35: 3,   # Sniper
+        36: 1,   # Necrophos
+        37: 2,   # Warlock
+        38: 2,   # Beastmaster
+        39: 2,   # Queen of Pain
+        40: 3,   # Venomancer
+        41: 1,   # Faceless Void
+        42: 2,   # Wraith King
+        43: 2,   # Death Prophet
+        44: 2,   # Phantom Assassin
+        45: 3,   # Pugna
+        46: 2,   # Chaos Knight
+        47: 2,   # Meepo
+        48: 3,   # Treant Protector
+        49: 3,   # Ogre Magi
+        50: 2,   # Undying
+        51: 2,   # Rubick
+        52: 1,   # Disruptor
+        53: 3,   # Nyx Assassin
+        54: 3,   # Naga Siren
+        55: 2,   # Keeper of the Light
+        56: 2,   # Io
+        57: 2,   # Visage
+        58: 3,   # Slark
+        59: 1,   # Medusa
+        60: 3,   # Troll Warlord
+        61: 2,   # Centaur Warrunner
+        62: 2,   # Magnus
+        63: 3,   # Timbersaw
+        64: 3,   # Bristleback
+        65: 1,   # Tusk
+        66: 2,   # Skywrath Mage
+        67: 3,   # Abaddon
+        68: 2,   # Elder Titan
+        69: 3,   # Legion Commander
+        70: 2,   # Techies
+        71: 2,   # Oracle
+        72: 2,   # Winter Wyvern
+        73: 3,   # Arc Warden
+        74: 3,   # Monkey King
+        75: 3,   # Dark Willow
+        76: 3,   # Pangolier
+        77: 2,   # Grimstroke
+        78: 2,   # Hoodwink
+        79: 2,   # Void Spirit
+        80: 3,   # Snapfire
+        81: 3,   # Mars
+        82: 3,   # Dawnbreaker
+        83: 3,   # Marci
+        # Дополняй при необходимости для новых героев
+    }

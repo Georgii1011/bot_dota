@@ -22,6 +22,12 @@ async def cmd_last_by_id(telegram_id: int):
     if not steam_input:
         return "⚠️ Ты ещё не авторизован. Используй /setsteam"
 
-    account_id = resolve_input_to_account_id(steam_input)
+    try:
+        account_id = resolve_input_to_account_id(steam_input)
+    except ValueError as e:
+        return f"⚠️ Ошибка: {e}"
+    except Exception:
+        return "⚠️ Не удалось определить Steam ID. Попробуй позже."
+
     summary = build_match_summary(account_id)
     return summary, get_main_menu()

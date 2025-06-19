@@ -22,6 +22,7 @@ propcache==0.3.2
 property-manager==3.0
 pydantic==2.11.7
 pydantic_core==2.33.2
+python-dotenv==1.1.0
 pytz==2025.2
 requests==2.32.4
 six==1.17.0
@@ -30,5 +31,3 @@ typing_extensions==4.14.0
 urllib3==2.4.0
 verboselogs==1.7
 yarl==1.20.1
-
-python-dotenv~=1.1.0

@@ -12,6 +12,7 @@ def get_main_menu():
         InlineKeyboardButton("📈 Моя статистика", callback_data="mystat"),
         InlineKeyboardButton("🧾 Установить Steam ID", callback_data="setsteam"),
         InlineKeyboardButton("ℹ️ Помощь", callback_data="help"),
+        # InlineKeyboardButton("Последние матчи!", callback_data="recent")
     )
     return inline_kb
 

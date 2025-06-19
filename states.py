@@ -8,3 +8,4 @@ class UserState(StatesGroup):
     waiting_for_steam_id = State()
     waiting_for_hero_name = State()
     waiting_for_recent_count = State()
+    waiting_for_about_hero_name = State()
