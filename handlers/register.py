@@ -1,6 +1,8 @@
 # handlers/register.py
 
 from aiogram import Dispatcher
+
+from handlers.common.future import cmd_future
 from handlers.heroes.about_hero import *
 from handlers.common.me import cmd_me
 from handlers.common.start import cmd_start
@@ -21,6 +23,7 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_help, commands=["help"], state="*")
     dp.register_message_handler(cmd_set_steam, commands=["setsteam"], state="*")
     dp.register_message_handler(cmd_me, commands=["me"], state="*")
+    dp.register_message_handler(cmd_future, commands=["future"], state="*")
     dp.register_message_handler(cmd_last, commands=["last"], state="*")
     dp.register_message_handler(cmd_contr, commands=["contr"], state="*")
     dp.register_message_handler(cmd_meta, commands=["meta"], state="*")
@@ -34,6 +37,7 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_help, lambda msg: msg.text == "ℹ️ Помощь", state="*")
     dp.register_message_handler(cmd_set_steam, lambda msg: msg.text == "🧾 Установить Steam ID", state="*")
     dp.register_message_handler(cmd_me, lambda msg: msg.text == "ℹ️ Информация обо мне", state="*")
+    dp.register_message_handler(cmd_future, lambda msg: msg.text == "🚀 Планы на будущее", state="*")
 
     # Меню матчей
     dp.register_message_handler(cmd_last, lambda msg: msg.text == "📊 Последняя игра", state="*")
@@ -51,13 +55,13 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(show_main_menu, lambda msg: msg.text == "🔙 Назад", state="*")
 
     # Переход в подменю
-    dp.register_message_handler(show_common_menu, lambda msg: msg.text == "Общие", state="*")
-    dp.register_message_handler(show_matches_menu, lambda msg: msg.text == "Матчи", state="*")
-    dp.register_message_handler(show_player_menu, lambda msg: msg.text == "Игроку", state="*")
-    dp.register_message_handler(show_heroes_menu, lambda msg: msg.text == "Герои", state="*")
-    dp.register_message_handler(show_meta_menu, lambda msg: msg.text == "Драфт", state="*")
-    dp.register_message_handler(show_comprasion_menu, lambda msg: msg.text == "Сравнение", state="*")
-    dp.register_message_handler(show_fun_menu, lambda msg: msg.text == "Фан", state="*")
+    dp.register_message_handler(show_common_menu, lambda msg: msg.text == "📊 Общие", state="*")
+    dp.register_message_handler(show_matches_menu, lambda msg: msg.text == "📅 Матчи", state="*")
+    dp.register_message_handler(show_player_menu, lambda msg: msg.text == "🙋 Игроку", state="*")
+    dp.register_message_handler(show_heroes_menu, lambda msg: msg.text == "🦸 Герои", state="*")
+    dp.register_message_handler(show_meta_menu, lambda msg: msg.text == "🎯 Драфт", state="*")
+    dp.register_message_handler(show_comprasion_menu, lambda msg: msg.text == "⚖️ Сравнение", state="*")
+    dp.register_message_handler(show_fun_menu, lambda msg: msg.text == "🎉 Фан", state="*")
 
     #Обработка состояний
     dp.register_message_handler(process_hero_name, state=UserState.waiting_for_hero_name)

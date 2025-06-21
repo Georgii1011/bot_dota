@@ -5,19 +5,19 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 def get_main_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
-        KeyboardButton("Общие"),
-        KeyboardButton("Матчи")
+        KeyboardButton("📊 Общие"),
+        KeyboardButton("📅 Матчи")
     )
     kb.row(
-        KeyboardButton("Игроку"),
-        KeyboardButton("Герои")
+        KeyboardButton("🙋 Игроку"),
+        KeyboardButton("🦸 Герои")
     )
     kb.row(
-        KeyboardButton("Драфт"),
-        KeyboardButton("Сравнение")
+        KeyboardButton("🎯 Драфт"),
+        KeyboardButton("⚖️ Сравнение")
     )
     kb.row(
-        KeyboardButton("Фан")
+        KeyboardButton("🎉 Фан")
     )
 
     return kb
@@ -31,6 +31,9 @@ def get_common_menu():
     kb.row(
         KeyboardButton("🧾 Установить Steam ID"),
         KeyboardButton("ℹ️ Информация обо мне")
+    )
+    kb.row(
+        KeyboardButton("🚀 Планы на будущее")
     )
     kb.row(
         KeyboardButton("🔙 Назад")

@@ -10,6 +10,7 @@ async def set_bot_commands(bot: Bot):
         BotCommand(command="/help", description="Список всех команд"),
         BotCommand(command="/setsteam", description="Ввести новый стим"),
         BotCommand(command="/me", description="Информация о регистрации"),
+        BotCommand(command="/future", description="Планы на будущее"),
         BotCommand(command="/contr", description="Контрпики против героя"),
         BotCommand(command="/last", description="Последняя игра Dota 2"),
         BotCommand(command="/meta", description="Лучшие герои патча"),
