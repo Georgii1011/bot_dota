@@ -4,6 +4,7 @@ from dota_api.matches import get_match_details
 from dota_api.recent import *
 from services.matches import format_duration
 from utils.name_heroes import pick_emoji
+from dota_api.heroes import hero_dict
 
 
 async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
@@ -34,9 +35,6 @@ async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
         )
 
     return "\n".join(lines)
-
-
-from dota_api.heroes import hero_dict
 
 def extract_match_summary(match_data: dict, account_id: int) -> dict:
     # Найдём игрока в матче

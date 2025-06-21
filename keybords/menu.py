@@ -33,9 +33,7 @@ def get_common_menu():
         KeyboardButton("ℹ️ Информация обо мне")
     )
     kb.row(
-        KeyboardButton("🚀 Планы на будущее")
-    )
-    kb.row(
+        KeyboardButton("🚀 Планы на будущее"),
         KeyboardButton("🔙 Назад")
     )
 
@@ -98,6 +96,36 @@ def get_fun_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
         KeyboardButton("🔙 Назад")
+    )
+
+    return kb
+
+'''def get_listofheroes_menu():
+    kb = ReplyKeyboardMarkup(resize_keyboard=True)
+    kb.row(
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+    )'''
+
+def get_numbers_menu():
+    kb = ReplyKeyboardMarkup(resize_keyboard=True)
+    kb.row(
+        KeyboardButton("1"),
+        KeyboardButton("2"),
+        KeyboardButton("3"),
+        KeyboardButton("4"),
+        KeyboardButton("5"),
+    )
+    kb.row(
+        KeyboardButton("6"),
+        KeyboardButton("7"),
+        KeyboardButton("8"),
+        KeyboardButton("9"),
+        KeyboardButton("10")
     )
 
     return kb

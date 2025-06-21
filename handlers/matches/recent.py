@@ -2,6 +2,8 @@
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
+from keybords.menu import get_numbers_menu, get_matches_menu
+from loader import bot
 from services.recent import build_recent_matches_summary
 from states import UserState
 from database.db import get_user_steam_id
@@ -13,7 +15,7 @@ async def cmd_recent(message: types.Message, state: FSMContext):
     parts = text.split(maxsplit=1)
 
     if text == "🎮 Последние игры":
-        await message.answer("Сколько последних матчей показать? Введи число от 1 до 10.")
+        await message.answer("Сколько последних матчей показать? Введи число от 1 до 10.", reply_markup=get_numbers_menu())
         await state.set_state(UserState.waiting_for_recent_count)
         return
 
@@ -46,4 +48,4 @@ async def cmd_recent(message: types.Message, state: FSMContext):
 
     account_id = resolve_input_to_account_id(steam_input)
     summary = await build_recent_matches_summary(account_id, count)
-    await message.answer(summary)
+    await message.answer(summary, reply_markup=get_matches_menu())
