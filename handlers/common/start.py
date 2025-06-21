@@ -1,4 +1,4 @@
-# handlers/start.py
+# handlers/common/start.py
 
 from aiogram import types
 from keybords.menu import *

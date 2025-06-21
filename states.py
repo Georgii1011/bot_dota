@@ -1,4 +1,5 @@
 # states.py
+
 # для aiogram 2.x
 from aiogram.dispatcher.filters.state import State, StatesGroup
 

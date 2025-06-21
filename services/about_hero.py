@@ -1,3 +1,5 @@
+# services/about_hero.py
+
 from dota_api.heroes import *
 
 hero_dict = get_hero_dict()

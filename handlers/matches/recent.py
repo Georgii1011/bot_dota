@@ -1,4 +1,4 @@
-# handlers/recent.py
+# handlers/matches/recent.py
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext

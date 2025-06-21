@@ -1,4 +1,4 @@
-### handlers/mystat.py
+# handlers/player/mystat.py
 
 from aiogram import types
 from utils.converters import resolve_input_to_account_id

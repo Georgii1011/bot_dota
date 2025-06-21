@@ -1,4 +1,4 @@
-# handlers/me.py
+# handlers/common/me.py
 
 from aiogram import types
 from aiogram.utils.markdown import escape_md

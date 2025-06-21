@@ -1,3 +1,5 @@
+# services/rank_tier.py
+
 def rank_tier_to_str(rank_tier: int | None) -> str:
     if not rank_tier:
         return "Нет данных"

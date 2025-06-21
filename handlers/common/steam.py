@@ -1,4 +1,4 @@
-### handlers/steam.py
+# handlers/common/steam.py
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext

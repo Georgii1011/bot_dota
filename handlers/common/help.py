@@ -1,4 +1,4 @@
-# handler/help.py
+# handler/common/help.py
 
 from aiogram import types
 

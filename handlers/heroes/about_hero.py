@@ -1,3 +1,5 @@
+# handlers/heroes/about_hero.py
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 

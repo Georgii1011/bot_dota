@@ -1,4 +1,5 @@
 # config.py
+
 # Здесь будет токен твоего бота от BotFather
 #Основа
 API_TOKEN = '8086319626:AAHVLfeH4NCsiw08zvzLktaBRpO5LGWlYz4'

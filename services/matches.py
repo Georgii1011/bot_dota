@@ -3,10 +3,9 @@
 from dota_api.heroes import get_hero_dict
 from dota_api.matches import get_last_match, get_match_details
 from utils.name_heroes import *
+from datetime import timedelta
 
 hero_dict = get_hero_dict()
-
-from datetime import timedelta
 
 def format_duration(seconds: int) -> str:
     return str(timedelta(seconds=seconds))[2:7]  # мм:сс

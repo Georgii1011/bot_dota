@@ -1,4 +1,4 @@
-### handlers/contr.py
+# handlers/heroes/contr.py
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
