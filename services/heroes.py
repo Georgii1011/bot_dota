@@ -1,3 +1,5 @@
+# services/heroes.py
+
 def format_hero_info(hero_data: dict, complexity: int | None = None) -> str:
     name = hero_data.get("localized_name", "Неизвестный герой")
     primary_attr = hero_data.get("primary_attr", "-").capitalize()

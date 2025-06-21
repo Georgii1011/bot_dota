@@ -12,7 +12,7 @@ def build_hero_about_summary(hero_name_input: str) -> str:
     if not hero_id:
         return "Герой не найден в базе."
 
-    stats = get_hero_stats(hero_id)  # ты можешь реализовать это в своем `dota_api.heroes`
+    stats = get_hero_stats(hero_id)
     if not stats:
         return "Не удалось получить данные по герою."
 

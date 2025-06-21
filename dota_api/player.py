@@ -15,8 +15,6 @@ def get_player_winloss(account_id: int) -> dict:
         "losses": data.get("lose", 0),
     }
 
-import requests
-
 def get_player_rank(account_id: int) -> dict:
     """
     Возвращает словарь с рангом и местом в рейтинге (если есть).

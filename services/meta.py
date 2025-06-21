@@ -12,5 +12,4 @@ def build_meta_summary(limit=10):
         lines.append(
             f"{emoji} {hero['name']} — {hero['winrate']}% WR | {hero['pickrate']}% PR"
         )
-
     return "🔥 Самые популярные герои сейчас:\n" + "\n".join(lines)

@@ -1,4 +1,5 @@
 ### handlers/utils.py
+
 from database.db import get_user_steam_id
 from aiogram import *
 

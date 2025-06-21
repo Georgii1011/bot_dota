@@ -1,7 +1,8 @@
+# handlers/recent.py
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from states import *
-
 from services.recent import build_recent_matches_summary
 from states import UserState
 from database.db import get_user_steam_id
@@ -12,7 +13,6 @@ async def cmd_recent(message: types.Message, state: FSMContext):
     text = message.text.strip()
     parts = text.split(maxsplit=1)
 
-    # Если состояние = ожидание ввода количества
     current_state: State = await state.get_state()
     if current_state == UserState.waiting_for_recent_count.state:
         count_str = text
@@ -32,7 +32,6 @@ async def cmd_recent(message: types.Message, state: FSMContext):
         await message.answer("❗ Количество матчей должно быть от 1 до 10.")
         return
 
-    # Сброс состояния (если оно было)
     await state.set_state(UserState.idle)
 
     telegram_id = message.from_user.id

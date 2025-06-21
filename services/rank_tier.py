@@ -10,7 +10,5 @@ def rank_tier_to_str(rank_tier: int | None) -> str:
         return "Immortal"
     if 1 <= tier <= 7:
         div_map = {0: "0", 1: "5", 2: "4", 3: "3", 4: "2", 5: "1"}
-        # Примечание: иногда деление и делаем mapping дивизионов,
-        # можно упростить под себя.
         return f"{tiers[tier - 1]} {div}"
     return "Неизвестный ранг"

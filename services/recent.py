@@ -1,6 +1,5 @@
 from dota_api.matches import get_match_details
 from dota_api.recent import *
-from handlers.recent import *
 
 async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
     matches = get_last_matches(account_id, count)
@@ -15,7 +14,6 @@ async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
         try:
             summary = extract_match_summary(match_data, account_id)
         except Exception as e:
-            # Можно логировать ошибку
             continue
 
         hero = summary["hero"]
@@ -34,14 +32,6 @@ async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
 from dota_api.heroes import hero_dict
 
 def extract_match_summary(match_data: dict, account_id: int) -> dict:
-    """
-    Извлекает данные по матчу:
-    - герой
-    - победа/поражение
-    - K/D/A
-    - дата и время
-    - networth
-    """
     # Найдём игрока в матче
     player = None
     for p in match_data.get("players", []):
@@ -54,7 +44,7 @@ def extract_match_summary(match_data: dict, account_id: int) -> dict:
     hero_id = player.get("hero_id")
     hero_name = hero_dict.get(hero_id, "Unknown Hero")
 
-    win = (player.get("win") == 1)  # В OpenDota win = 1/0 в поле игрока (или можно вычислить иначе)
+    win = (player.get("win") == 1)
 
     kills = player.get("kills", 0)
     deaths = player.get("deaths", 0)

@@ -2,9 +2,6 @@
 
 from aiogram import types
 
-from handlers.menu import send_main_menu
-
-
 async def cmd_help(message: types.Message):
     help_text = (
         "🛠 Доступные команды:\n\n"
@@ -17,4 +14,3 @@ async def cmd_help(message: types.Message):
         "/help — Показать это сообщение\n"
     )
     await message.answer(help_text)
-    await send_main_menu(message)
