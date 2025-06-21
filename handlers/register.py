@@ -7,7 +7,7 @@ from handlers.common.start import cmd_start
 from handlers.common.steam import cmd_set_steam, process_steam_id
 from handlers.matches.last import cmd_last
 from handlers.player.mystat import cmd_my_stat
-from handlers.druft.meta import cmd_meta
+from handlers.draft.meta import cmd_meta
 from handlers.heroes.contr import cmd_contr, process_hero_name
 from handlers.fallback import unknown_message
 from handlers.common.help import cmd_help
@@ -23,7 +23,7 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_me, commands=["me"], state="*")
     dp.register_message_handler(cmd_last, commands=["last"], state="*")
     dp.register_message_handler(cmd_contr, commands=["contr"], state="*")
-    dp.register_message_handler(cmd_meta, commands=["druft"], state="*")
+    dp.register_message_handler(cmd_meta, commands=["meta"], state="*")
     dp.register_message_handler(cmd_my_stat, commands=["mystat"], state="*")
     dp.register_message_handler(cmd_recent, commands=["recent"], state="*")
     dp.register_message_handler(cmd_about_hero, commands=["about_hero"], state="*")

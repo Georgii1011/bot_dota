@@ -1,4 +1,4 @@
-# handlers/druft/meta.py
+# handlers/draft/meta.py
 
 from aiogram import types
 from services.meta import build_meta_summary
