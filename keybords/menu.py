@@ -44,7 +44,8 @@ def get_common_menu():
 def get_matches_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
-        KeyboardButton("📊 Последняя игра")
+        KeyboardButton("📊 Последняя игра"),
+        KeyboardButton("🎮 Последние игры")
     )
     kb.row(
         KeyboardButton("🔙 Назад")

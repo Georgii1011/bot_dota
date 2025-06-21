@@ -2,7 +2,6 @@
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-from states import *
 from services.recent import build_recent_matches_summary
 from states import UserState
 from database.db import get_user_steam_id
@@ -13,13 +12,18 @@ async def cmd_recent(message: types.Message, state: FSMContext):
     text = message.text.strip()
     parts = text.split(maxsplit=1)
 
-    current_state: State = await state.get_state()
+    if text == "🎮 Последние игры":
+        await message.answer("Сколько последних матчей показать? Введи число от 1 до 10.")
+        await state.set_state(UserState.waiting_for_recent_count)
+        return
+
+    current_state = await state.get_state()
     if current_state == UserState.waiting_for_recent_count.state:
         count_str = text
     elif len(parts) == 2:
         count_str = parts[1]
     else:
-        await message.answer("Сколько последних матчей показать? Введи число от 1 до 10 (по умолчанию 5).")
+        await message.answer("Сколько последних матчей показать? Введи число от 1 до 10.")
         await state.set_state(UserState.waiting_for_recent_count)
         return
 

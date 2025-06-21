@@ -2,6 +2,9 @@
 
 from dota_api.matches import get_match_details
 from dota_api.recent import *
+from services.matches import format_duration
+from utils.name_heroes import pick_emoji
+
 
 async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
     matches = get_last_matches(account_id, count)
@@ -15,17 +18,19 @@ async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:
 
         try:
             summary = extract_match_summary(match_data, account_id)
-        except Exception as e:
+        except Exception:
             continue
 
         hero = summary["hero"]
-        result = "Победа" if summary["win"] else "Поражение"
+        result = "✅ Победа" if summary["win"] else "❌ Поражение"
+        emoji = pick_emoji(hero)
         kda = f"{summary['kills']}/{summary['deaths']}/{summary['assists']}"
         date = summary["date"].strftime("%d.%m.%Y %H:%M")
         networth = summary.get("net_worth", "N/A")
+        match_time = format_duration(match_data.get("duration", 0))
 
         lines.append(
-            f"{hero} — {result}\nK/D/A: {kda}\nДата: {date}\nNet Worth: {networth}\n"
+            f"{emoji}{hero} — {result}\nK/D/A: {kda}\nДата: {date}\nNet Worth: {networth}\nВремя матча - {match_time}\n\n"
         )
 
     return "\n".join(lines)

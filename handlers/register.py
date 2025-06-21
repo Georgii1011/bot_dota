@@ -41,6 +41,7 @@ def register_handlers(dp: Dispatcher):
 
     # Меню матчей
     dp.register_message_handler(cmd_last, lambda msg: msg.text == "📊 Последняя игра", state="*")
+    dp.register_message_handler(cmd_recent, lambda msg: msg.text == "🎮 Последние игры", state="*")
 
     # Меню игрока
     dp.register_message_handler(cmd_my_stat, lambda msg: msg.text == "📈 Моя статистика", state="*")
