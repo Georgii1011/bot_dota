@@ -1,4 +1,4 @@
-# services/meta.py
+# services/druft.py
 
 from dota_api.meta import *
 from utils.name_heroes import *

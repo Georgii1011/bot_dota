@@ -6,14 +6,14 @@ from aiogram.types import BotCommand
 
 async def set_bot_commands(bot: Bot):
     commands = [
+        BotCommand(command="/start", description="Приветствие и инструкция, обновление бота"),
         BotCommand(command="/help", description="Список всех команд"),
-        BotCommand(command="/start", description="Приветствие и инструкция"),
+        BotCommand(command="/setsteam", description="Ввести новый стим"),
         BotCommand(command="/me", description="Информация о регистрации"),
         BotCommand(command="/contr", description="Контрпики против героя"),
         BotCommand(command="/last", description="Последняя игра Dota 2"),
-        BotCommand(command="/meta", description="Лучшие герои патча"),
+        BotCommand(command="/druft", description="Лучшие герои патча"),
         BotCommand(command="/mystat", description="Ваша личная статистика"),
-        BotCommand(command="/setsteam", description="Ввести новый стим"),
         BotCommand(command="/recent", description="Последние ваши игры"),
         BotCommand(command="/about_hero", description="Информация о герое")
     ]

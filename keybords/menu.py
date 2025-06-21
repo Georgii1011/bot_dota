@@ -25,11 +25,12 @@ def get_main_menu():
 def get_common_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
-        KeyboardButton("Привествие или обновление бота"),
+        KeyboardButton("👋🤖 Привествие или обновление бота"),
         KeyboardButton("ℹ️ Помощь")
     )
     kb.row(
-        KeyboardButton("🧾 Установить Steam ID")
+        KeyboardButton("🧾 Установить Steam ID"),
+        KeyboardButton("ℹ️ Информация обо мне")
     )
     kb.row(
         KeyboardButton("🔙 Назад")

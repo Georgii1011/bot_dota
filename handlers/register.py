@@ -7,7 +7,7 @@ from handlers.common.start import cmd_start
 from handlers.common.steam import cmd_set_steam, process_steam_id
 from handlers.matches.last import cmd_last
 from handlers.player.mystat import cmd_my_stat
-from handlers.meta.meta import cmd_meta
+from handlers.druft.meta import cmd_meta
 from handlers.heroes.contr import cmd_contr, process_hero_name
 from handlers.fallback import unknown_message
 from handlers.common.help import cmd_help
@@ -18,23 +18,34 @@ from handlers.keyboards import *
 def register_handlers(dp: Dispatcher):
     # Обработка консольных команд
     dp.register_message_handler(cmd_start, commands=["start"], state="*")
+    dp.register_message_handler(cmd_help, commands=["help"], state="*")
+    dp.register_message_handler(cmd_set_steam, commands=["setsteam"], state="*")
     dp.register_message_handler(cmd_me, commands=["me"], state="*")
     dp.register_message_handler(cmd_last, commands=["last"], state="*")
     dp.register_message_handler(cmd_contr, commands=["contr"], state="*")
-    dp.register_message_handler(cmd_meta, commands=["meta"], state="*")
+    dp.register_message_handler(cmd_meta, commands=["druft"], state="*")
     dp.register_message_handler(cmd_my_stat, commands=["mystat"], state="*")
-    dp.register_message_handler(cmd_set_steam, commands=["setsteam"], state="*")
-    dp.register_message_handler(cmd_help, commands=["help"], state="*")
     dp.register_message_handler(cmd_recent, commands=["recent"], state="*")
     dp.register_message_handler(cmd_about_hero, commands=["about_hero"], state="*")
 
     # Обработка команд из меню
-    dp.register_message_handler(cmd_last, lambda msg: msg.text == "📊 Последняя игра", state="*")
-    dp.register_message_handler(cmd_contr, lambda msg: msg.text == "🛡 Контрпики", state="*")
-    dp.register_message_handler(cmd_meta, lambda msg: msg.text == "🔥 Лучшие герои", state="*")
-    dp.register_message_handler(cmd_my_stat, lambda msg: msg.text == "📈 Моя статистика", state="*")
-    dp.register_message_handler(cmd_set_steam, lambda msg: msg.text == "🧾 Установить Steam ID", state="*")
+    # Общее меню
+    dp.register_message_handler(cmd_start, lambda msg: msg.text == "👋🤖 Привествие или обновление бота", state="*")
     dp.register_message_handler(cmd_help, lambda msg: msg.text == "ℹ️ Помощь", state="*")
+    dp.register_message_handler(cmd_set_steam, lambda msg: msg.text == "🧾 Установить Steam ID", state="*")
+    dp.register_message_handler(cmd_me, lambda msg: msg.text == "ℹ️ Информация обо мне", state="*")
+
+    # Меню матчей
+    dp.register_message_handler(cmd_last, lambda msg: msg.text == "📊 Последняя игра", state="*")
+
+    # Меню игрока
+    dp.register_message_handler(cmd_my_stat, lambda msg: msg.text == "📈 Моя статистика", state="*")
+
+    # Меню героев
+    dp.register_message_handler(cmd_contr, lambda msg: msg.text == "🛡 Контрпики", state="*")
+
+    # Меню драфта
+    dp.register_message_handler(cmd_meta, lambda msg: msg.text == "🔥 Лучшие герои", state="*")
 
     # Обработка команды назад
     dp.register_message_handler(show_main_menu, lambda msg: msg.text == "🔙 Назад", state="*")

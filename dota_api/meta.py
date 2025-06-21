@@ -1,4 +1,4 @@
-# dota_api/meta.py
+# dota_api/druft.py
 
 import requests
 
