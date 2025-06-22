@@ -68,7 +68,8 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(process_hero_name, state=UserState.waiting_for_hero_name)
     dp.register_message_handler(process_steam_id, state=UserState.waiting_for_steam_id)
     dp.register_message_handler(process_about_hero_name, state=UserState.waiting_for_about_hero_name)
-    dp.register_message_handler(cmd_recent, state=UserState.waiting_for_recent_count)
+    #dp.register_message_handler(cmd_recent, state=UserState.waiting_for_recent_count)
+    dp.register_message_handler(process_recent_count, state=UserState.waiting_for_recent_count)
 
     #Обработка неизвестной команды (всегда должна быть в конце)
     dp.register_message_handler(unknown_message, content_types=types.ContentTypes.TEXT, state="*")

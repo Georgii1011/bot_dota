@@ -2,7 +2,7 @@
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-
+from keybords.menu import get_listofheroes_menu, get_heroes_menu, get_main_menu
 from states import UserState
 from services.contr import build_counters_summary
 from utils.errors import log_exception
@@ -13,7 +13,7 @@ async def cmd_contr(message: types.Message, state: FSMContext):
 
         # Обработка вызова с кнопки (например, "🛡 Контрпики")
         if text == "🛡 Контрпики" or text == "/contr":
-            await message.answer("Пожалуйста, введи имя героя:")
+            await message.answer("Пожалуйста, введи имя героя:", reply_markup=get_listofheroes_menu())
             await state.set_state(UserState.waiting_for_hero_name)
             return
 
@@ -35,7 +35,8 @@ async def cmd_contr(message: types.Message, state: FSMContext):
 async def process_hero_name(message: types.Message, state: FSMContext):
     text = message.text.strip()
 
-    if text.startswith("/"):
+    if text.startswith("/") or text == "🔙 Назад":
+        await message.answer("Главное меню.", reply_markup=get_main_menu())
         await state.finish()
         return False
 
@@ -44,7 +45,7 @@ async def process_hero_name(message: types.Message, state: FSMContext):
         await message.answer(summary + "\nПопробуй ещё раз или введи /contr для выхода.")
         return True
 
-    await message.answer(summary)
+    await message.answer(summary, reply_markup=get_heroes_menu())
     await state.finish()
     return True
 

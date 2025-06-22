@@ -100,17 +100,6 @@ def get_fun_menu():
 
     return kb
 
-'''def get_listofheroes_menu():
-    kb = ReplyKeyboardMarkup(resize_keyboard=True)
-    kb.row(
-        KeyboardButton("Ogre Magi"),
-        KeyboardButton("Ogre Magi"),
-        KeyboardButton("Ogre Magi"),
-        KeyboardButton("Ogre Magi"),
-        KeyboardButton("Ogre Magi"),
-        KeyboardButton("Ogre Magi"),
-    )'''
-
 def get_numbers_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
@@ -126,6 +115,26 @@ def get_numbers_menu():
         KeyboardButton("8"),
         KeyboardButton("9"),
         KeyboardButton("10")
+    )
+    kb.row(
+        KeyboardButton("🔙 Назад")
+    )
+
+    return kb
+
+
+def get_listofheroes_menu():
+    kb = ReplyKeyboardMarkup(resize_keyboard=True)
+    kb.row(
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+        KeyboardButton("Ogre Magi"),
+    )
+    kb.row(
+        KeyboardButton("🔙 Назад")
     )
 
     return kb
