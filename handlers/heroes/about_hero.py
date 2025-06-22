@@ -2,9 +2,8 @@
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-
 from states import UserState
-from services.about_hero import build_hero_about_summary
+from services.about_hero import *
 
 async def cmd_about_hero(message: types.Message, state: FSMContext):
     parts = message.text.strip().split(maxsplit=1)

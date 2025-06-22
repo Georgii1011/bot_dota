@@ -1,9 +1,8 @@
 # handlers/matches/last.py
 
-from aiogram import *
-from utils.converters import resolve_input_to_account_id
-from services.matches import build_match_summary
-from handlers.utils import ensure_authorized
+from utils.converters import *
+from services.matches import *
+from handlers.utils import *
 
 async def cmd_last(message: types.Message):
     steam_input = await ensure_authorized(message)

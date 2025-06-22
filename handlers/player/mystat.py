@@ -1,10 +1,9 @@
 # handlers/player/mystat.py
 
-from aiogram import types
-from utils.converters import resolve_input_to_account_id
-from services.player import format_player_stats_message
-from handlers.utils import ensure_authorized
-from utils.errors import log_exception
+from utils.converters import *
+from services.player import *
+from handlers.utils import *
+from utils.errors import *
 
 async def cmd_my_stat(message: types.Message):
     steam_input = await ensure_authorized(message)

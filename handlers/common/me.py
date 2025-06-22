@@ -2,7 +2,7 @@
 
 from aiogram import types
 from aiogram.utils.markdown import escape_md
-from database.db import get_user_steam_id
+from database.db import *
 
 async def cmd_me(message: types.Message):
     telegram_id = message.from_user.id

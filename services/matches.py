@@ -1,7 +1,7 @@
 # services/last.py
 
-from dota_api.heroes import get_hero_dict
-from dota_api.matches import get_last_match, get_match_details
+from dota_api.heroes import *
+from dota_api.matches import *
 from utils.name_heroes import *
 from datetime import timedelta
 

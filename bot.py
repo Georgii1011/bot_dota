@@ -1,8 +1,7 @@
 # bot.py
 
-from aiogram.utils import executor
-from database.db import init_db
-from handlers.register import register_handlers
+from database.db import *
+from handlers.register import *
 from setcommands import *
 from loader import *
 

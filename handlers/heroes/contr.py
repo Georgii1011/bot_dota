@@ -2,10 +2,10 @@
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-from keybords.menu import get_listofheroes_menu, get_heroes_menu, get_main_menu
+from keybords.menu import *
 from states import UserState
-from services.contr import build_counters_summary
-from utils.errors import log_exception
+from services.contr import *
+from utils.errors import *
 
 async def cmd_contr(message: types.Message, state: FSMContext):
     try:

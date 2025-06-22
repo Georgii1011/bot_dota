@@ -1,19 +1,17 @@
 # handlers/register.py
 
-from aiogram import Dispatcher
-
-from handlers.common.future import cmd_future
-from handlers.heroes.about_hero import *
-from handlers.common.me import cmd_me
-from handlers.common.start import cmd_start
-from handlers.common.steam import cmd_set_steam, process_steam_id
-from handlers.matches.last import cmd_last
-from handlers.player.mystat import cmd_my_stat
-from handlers.draft.meta import cmd_meta
-from handlers.heroes.contr import cmd_contr, process_hero_name
-from handlers.fallback import unknown_message
-from handlers.common.help import cmd_help
+from handlers.common.future import *
+from handlers.common.me import *
+from handlers.common.start import *
+from handlers.common.steam import *
+from handlers.common.help import *
+from handlers.matches.last import *
 from handlers.matches.recent import *
+from handlers.player.mystat import *
+from handlers.draft.meta import *
+from handlers.heroes.contr import *
+from handlers.heroes.about_hero import *
+from handlers.fallback import *
 from handlers.keyboards import *
 
 

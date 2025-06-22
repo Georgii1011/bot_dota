@@ -1,8 +1,8 @@
 # handlers/draft/meta.py
 
 from aiogram import types
-from services.meta import build_meta_summary
-from utils.errors import log_exception
+from services.meta import *
+from utils.errors import *
 
 async def cmd_meta(message: types.Message):
     try:

@@ -1,7 +1,7 @@
 # services/player.py
 
 from dota_api.player import *
-from services.rank_tier import rank_tier_to_str
+from services.rank_tier import *
 
 
 def format_player_stats_message(steam_input: str, account_id: int) -> str:

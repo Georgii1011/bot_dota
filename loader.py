@@ -1,7 +1,7 @@
 # loader.py
 
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram import Bot, Dispatcher
+from aiogram.contrib.fsm_storage.memory import *
+from aiogram import *
 from config import *
 
 storage = MemoryStorage()

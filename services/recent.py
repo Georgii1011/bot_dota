@@ -1,10 +1,8 @@
 # services/recent.py
 
-from dota_api.matches import get_match_details
 from dota_api.recent import *
-from services.matches import format_duration
-from utils.name_heroes import pick_emoji
-from dota_api.heroes import hero_dict
+from services.matches import *
+from dota_api.heroes import *
 
 
 async def build_recent_matches_summary(account_id: int, count: int = 10) -> str:

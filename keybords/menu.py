@@ -1,6 +1,6 @@
 # keyboards/menu.py
 
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import *
 
 def get_main_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
