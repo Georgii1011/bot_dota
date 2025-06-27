@@ -37,13 +37,30 @@ def get_hero_stats(hero_id: int) -> dict | None:
 
     for hero in heroes:
         if hero["id"] == hero_id:
+            total_pro_picks = sum(h.get("pro_pick", 0) for h in heroes)
             return {
                 "roles": hero.get("roles", []),
-                "complexity": hero.get("complexity", "—"),
+                "primary_attr": hero.get("primary_attr"),
+                "attack_type": hero.get("attack_type"),
+                "base_attack_min": hero.get("base_attack_min"),
+                "base_attack_max": hero.get("base_attack_max"),
+                "attack_rate": hero.get("attack_rate"),
+                "base_armor": hero.get("base_armor"),
+                "attack_range": hero.get("attack_range"),
+                "move_speed": hero.get("move_speed"),
+                "base_health": hero.get("base_health"),
+                "base_health_regen": hero.get("base_health_regen"),
+                "base_mana": hero.get("base_mana"),
+                "base_mana_regen": hero.get("base_mana_regen"),
+                "base_str": hero.get("base_str"),
+                "base_agi": hero.get("base_agi"),
+                "base_int": hero.get("base_int"),
+                "str_gain": hero.get("str_gain"),
+                "agi_gain": hero.get("agi_gain"),
+                "int_gain": hero.get("int_gain"),
                 "winrate": round(hero["win_rate"] * 100, 1) if "win_rate" in hero else round(
                     hero["pro_win"] / hero["pro_pick"] * 100, 1) if hero.get("pro_pick") else None,
-                "pick_rate": round(hero["pro_pick"] / sum(h.get("pro_pick", 0) for h in heroes) * 100, 1) if hero.get(
-                    "pro_pick") else None,
+                "pick_rate": round(hero["pro_pick"] / total_pro_picks * 100, 1) if hero.get("pro_pick") else None,
             }
 
     return None

@@ -45,6 +45,7 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_my_stat, lambda msg: msg.text == "📈 Моя статистика", state="*")
 
     # Меню героев
+    dp.register_message_handler(cmd_about_hero, lambda  msg: msg.text == "ℹ️Информация о герое", state="*")
     dp.register_message_handler(cmd_contr, lambda msg: msg.text == "🛡 Контрпики", state="*")
 
     # Меню драфта

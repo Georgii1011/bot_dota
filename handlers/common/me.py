@@ -18,7 +18,7 @@ async def cmd_me(message: types.Message):
             f"• *Имя:* {escape_md(full_name)}\n"
             f"• *Username:* @{escape_md(username)}\n"
             f"• *Telegram ID:* `{telegram_id}`\n"
-            f"• *Ссылка:* {mention}\n"
+            #f"• *Ссылка:* {mention}\n"
             f"• *Статус:* ✅ Зарегистрирован\n"
             f"• *Steam ID:* `{steam_id}`"
         )
@@ -28,7 +28,7 @@ async def cmd_me(message: types.Message):
             f"• *Имя:* {escape_md(full_name)}\n"
             f"• *Username:* @{escape_md(username)}\n"
             f"• *Telegram ID:* `{telegram_id}`\n"
-            f"• *Ссылка:* {mention}\n"
+            #f"• *Ссылка:* {mention}\n"
             f"• *Статус:* ❌ Не зарегистрирован"
         )
 

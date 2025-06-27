@@ -65,6 +65,7 @@ def get_player_menu():
 def get_heroes_menu():
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
     kb.row(
+        KeyboardButton("ℹ️Информация о герое"),
         KeyboardButton("🛡 Контрпики")
     )
     kb.row(
